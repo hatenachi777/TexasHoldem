@@ -64,7 +64,7 @@ public class PokerAccountController {
 		// ユーザー情報の登録
 		Thread.sleep(1000);
 		accountService.create(accountRequest);
-		return "/newAccountOK";
+		return "newAccountOK.html";
 	}
 	
 	//ログインページ
