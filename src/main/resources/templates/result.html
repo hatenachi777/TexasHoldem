@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>結果</title>
+<link rel="stylesheet" href="/css/test.css">
+</head>
+<body background="/card/5.png">
+<div type="hidden"><h1>Result</h1></div>
+<p><font color="white">ディーラー</font></p>
+<img th:src="${simpleResult.d_hand1}">
+<img th:src="${simpleResult.d_hand2}">
+<p></p>
+<p><font color="white">プリフロップ</font></p>
+<img th:src="${simpleResult.pref1}">
+<img th:src="${simpleResult.pref2}">
+<img th:src="${simpleResult.pref3}">
+<img th:src="${simpleResult.pref4}">
+<img th:src="${simpleResult.pref5}">
+
+<p><font color="white"><span th:text="${accountInfo.name}"></span>さんのハンド</font></p>
+<img th:src="${simpleResult.p_hand1}">
+<img th:src="${simpleResult.p_hand2}">
+
+<p><font color="white">ディーラー：<span th:text="${simpleResult.dealerRole}"></span></font></p>
+<p><font color="white"><span th:text="${accountInfo.name}"></span>さん：<span th:text="${simpleResult.playerRole}"></span></font></p>
+<p><font color="white">チップ数：<span th:text="${accountInfo.coin}"></span></font></p>
+
+<p><a href="/table"><font color="white">続ける</font></a></p>
+
+
+<a href="/"><font color="white">終わる</font></a>
+
+
+
+</body>
+</html>

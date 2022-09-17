@@ -1,0 +1,42 @@
+@charset "UTF-8";
+
+
+
+@media screen and (max-width: 480px) {
+	/* 480px以下に適用されるCSS（スマホ用） */
+	.form-group{
+		padding: 10px
+	
+	}
+	#lo{
+		margin-right: 75px;
+	
+	}
+	h1 {
+		color: white;
+		font-size: 2em;
+	}
+	font {
+		color: white;
+		font-size: 25px;
+		text-align: center;
+	}
+	body {
+		width: 100%;
+		height: 100%;
+		background: black;
+		text-align: center;
+		margin-top: 50px;
+	}
+	input{ 
+		font-size: 20px;
+		width: 200px;
+		
+	
+	} 
+	select{
+		font-size: 20px;
+		width: 200px;
+		height: 2em 
+	}
+}

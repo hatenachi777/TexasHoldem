@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>プレイヤー登録</title>
+<link rel="stylesheet" href="/css/test.css">
+</head>
+
+<body background="/card/6.png">
+	<div class="container">
+		<div th:if="${validationError}" th:each="error : ${validationError}">
+			<font color="white"><label class="text-danger" th:text="${error}"></label></font>
+		</div>
+		<h1>
+			<font color="white">プレイヤー登録</font>
+		</h1>
+		<form th:action="@{/newAccountOK}" th:object="${accountRequest}" th:method="post">
+			<div class="form-group">
+				<label><font color="white">ニックネーム：</font><span
+					class="text-danger">※</span></label> <input type="text" th:field="*{name}"
+					class="form-control">
+			</div>
+			<div class="form-group">
+				<label><font color="white">パスワード：</font></label> <input
+					type="password" th:field="*{password}" class="form-control">
+			</div>
+			<br />
+			<div class="text-center">
+				<a href="/" class="btn btn-secondary"><font color="white">キャンセル</font></a> <input type="submit"
+					value="　登録　" class="btn btn-primary">
+			</div>
+		</form>
+	</div>
+</body>
+</html>

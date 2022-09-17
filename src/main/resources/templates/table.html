@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>プレイ</title>
+<link rel="stylesheet" href="/css/test.css">
+</head>
+<body background="/card/r4.png">
+<div type="hidden"><h1>Texas Holdem</h1></div>
+<p><font color="white">ディーラー</font></p>
+<img src="/card/0ic_middle/bk0.png">
+<img src="/card/0ic_middle/bk0.png">
+<p></p>
+<p><font color="white">プリフロップ</font></p>
+<img th:src="${simpleResult.pref1}">
+<img th:src="${simpleResult.pref2}">
+<img th:src="${simpleResult.pref3}">
+
+<p><font color="white"><span th:text="${accountInfo.name}"></span>さんのハンド</font></p>
+<img th:src="${simpleResult.p_hand1}">
+<img th:src="${simpleResult.p_hand2}">
+<p><font color="white">チップ数：<span th:text="${accountInfo.coin}"></span></font></p>
+
+<form action="/result" method="post">
+<font color="white">ベット数：
+<select name="betCoin">
+          <option th:each="bet : ${coins}" th:value="*{bet}"><span th:text="*{bet}"></span></option>
+</select>
+</font>
+
+
+<input type="submit" value="ベット" > 
+
+</form>
+
+
+
+<p><a href="/table"><font color="white">フォールド</font></a></p>
+<a href="/"><font color="white">終わる</font></a>
+
+</body>
+</html>
