@@ -49,7 +49,9 @@ public class PokerAccountController {
 	}
 	//登録完了ページ
 	@PostMapping("/newAccountOK")
-	public String create(@Validated @ModelAttribute AccountRequest accountRequest, BindingResult result, Model model) {
+	public String create(@Validated @ModelAttribute AccountRequest accountRequest, BindingResult result, Model model) throws InterruptedException {
+		
+		Thread.sleep(1000);
 		if (result.hasErrors()) {
 			// 入力チェックエラーの場合
 			List<String> errorList = new ArrayList<String>();
@@ -60,9 +62,11 @@ public class PokerAccountController {
 			return "newAccount.html";
 		}
 		// ユーザー情報の登録
+		Thread.sleep(1000);
 		accountService.create(accountRequest);
 		return "/newAccountOK";
 	}
+	
 	//ログインページ
 	@GetMapping("/login")
 	public String loginStart(Model model) {
